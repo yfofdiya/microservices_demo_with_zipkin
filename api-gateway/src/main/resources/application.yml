@@ -1,0 +1,23 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      routes:
+        - id: STUDENT-SERVICE
+          uri: lb://STUDENT-SERVICE
+          predicates:
+            - Path=/students/**
+
+        - id: COURSE-SERVICE
+          uri: lb://COURSE-SERVICE
+          predicates:
+            - Path=/courses/**
+
+        - id: ADDRESS-SERVICE
+          uri: lb://ADDRESS-SERVICE
+          predicates:
+            - Path=/addresses/**

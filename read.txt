@@ -1,0 +1,4 @@
+Run .jar file using cmd java -jar zipkin-server-2.12.9-exec.jar 
+Run all three micro services first
+Open http://localhost:9411/zipkin/
+Open http://localhost:8761/
